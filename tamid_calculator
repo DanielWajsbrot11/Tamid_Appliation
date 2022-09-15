@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    //main variables
+    string inputVal;
+    double num1;
+    double num2;
+    char op;
+    double res;
+    bool calc = true;
+    
+    /*print welcome*/
+    cout << "Welcome to the TAMID Calculator!" << endl;
+    cout << endl;
+    
+    /*enter while*/
+    while (calc){
+        cout << "Would you like to calculate something (y/n): " << endl;
+        cin >> inputVal;
+        cout << endl;
+        if(inputVal[0] == 'y'){
+            cout << "Please enter the first number: " << endl;
+            cin >> num1;
+            cout << "Please enter the second number: " << endl;
+            cin >> num2;
+            cout << "Please enter your function: " << endl;
+            cin >> op;
+            switch (op) {
+                case '*':
+                    res = num1*num2;
+                    break;
+                case '/':
+                    res = num1/num2;
+                    break;
+                case '+':
+                    res = num1+num2;
+                    break;
+                case '-':
+                    res = num1-num2;
+                    break;
+                default:
+                    cout << "Enter valid input" << endl;
+                    cout << "Please enter your function: " << endl;
+                    cin >> op;
+            }
+            cout << "Your result was: " << res << "!" << endl;
+            cout << endl;
+        }else{
+            cout << "Thanks for coming!" << endl;
+            calc = false;
+        }
+    }
+    return 0;
+}
